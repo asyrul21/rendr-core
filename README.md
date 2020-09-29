@@ -1,3 +1,7 @@
+# RendR Core
+
+This repository serves as the single source of truth for the collection of all components which will be used for the Website Development Business Project. It will be used as a dependency, which will be pulled by Web-Prototypes(WPs). WP's will be used as a base design for customers to choose from, and which they can make visual customisations. To overwrite the CORE code base, WP's will need to use `alias.json`.
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

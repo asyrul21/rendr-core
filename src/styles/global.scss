@@ -1,5 +1,23 @@
 @import "./themes/themeColors.scss";
 
-p {
-  color: $green;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  // font-family: "Poppins";
+  position: relative;
+}
+
+a {
+  color: #2e7bc1;
+  text-decoration: none;
+}
+
+.container {
+  padding: 100px 155px 100px;
 }

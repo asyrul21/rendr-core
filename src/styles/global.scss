@@ -1,5 +1,15 @@
 @import "./themes/themeColors.scss";
 
+// import fonts
+// only use what you need
+// remove what you do not need
+@import "./fonts/Poppins/POPPINS.scss";
+@import "./fonts/Open_Sans/OPEN_SANS.scss";
+@import "./fonts/Roboto/ROBOTO.scss";
+@import "./fonts/Montserrat/MONTSERRAT.scss";
+@import "./fonts/Lora/LORA.scss";
+@import "./fonts/Dancing_Script/DANCING_SCRIPT.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +19,7 @@
 
 html,
 body {
-  // font-family: "Poppins";
+  font-family: "Poppins";
   position: relative;
 }
 
@@ -20,4 +30,25 @@ a {
 
 .container {
   padding: 100px 155px 100px;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

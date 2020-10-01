@@ -21,6 +21,63 @@ plugins: [
     `gatsby-plugin-sass`,
 ```
 
+## Setup Fonts
+
+[Refer This](https://www.gatsbyjs.com/docs/using-local-fonts/#using-local-fonts-in-gatsby).
+
+1. Copy font files into `/src/styles/fonts`
+
+2. Create `fonts.scss` in the same folder of the font folder
+
+```scss
+// Black
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-BlackItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+}
+// Extra Bold
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-ExtraBoldItalic.ttf");
+  font-weight: 800;
+  font-style: italic;
+}
+// Bold
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+```
+
+3. Import in `global.scss`
+
+```scss
+@import "./fonts/Poppins/POPPINS.scss";
+@import "./fonts/Open_Sans/OPEN_SANS.scss";
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

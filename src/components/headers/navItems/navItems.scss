@@ -1,0 +1,20 @@
+.navItemsContainer {
+  //   border: blue 1px solid;
+  width: 20%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.navItem {
+  color: black;
+  opacity: 0.9;
+}
+
+.navItem:hover {
+  opacity: 1;
+}
+
+.activeNavItem {
+  text-decoration: underline;
+}

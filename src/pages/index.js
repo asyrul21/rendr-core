@@ -1,16 +1,13 @@
-import React, { Fragment } from "react"
+import React from "react"
 import Layout from "../layouts/BaseLayout"
-import { Link } from "gatsby"
 
-// import style module
-import style from "../styles/pages/index.module.scss"
+// import view
+import Index from "../views/Index/index"
 
 const IndexPage = () => {
   return (
     <Layout>
-      <h1 className={style.header}>Hello World!</h1>
-      <p>Welcome to Rendr Core!</p>
-      <p className={style.brownText}>This text should be brown.</p>
+      <Index />
     </Layout>
   )
 }

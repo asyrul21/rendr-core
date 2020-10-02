@@ -1,6 +1,5 @@
 {
   "hasContent": "true",
-  "layout": "singleColumn",
   "backgroundImagePath": "/static/images/index/xps.jpg",
   "overlay": {
     "overlayColor": "rgba(255, 255, 255, 0.9)"
@@ -12,7 +11,7 @@
   },
   "button": {
     "color": "orange",
-    "shape": "oval",
+    "borderRadius": "50",
     "text": "Browse Programmes",
     "link": "/programmes",
     "linkColor": "white"

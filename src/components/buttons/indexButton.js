@@ -1,30 +1,28 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import { compose } from "redux"
 import propTypes from "prop-types"
+import withSpacing from "../../hocs/withSpacings/withSpacings"
+import withStyles from "../../hocs/withStyles/withStyles"
+import classnames from "classnames"
 
 import "./indexButton.scss"
 
-class indexButton extends Component {
-  getColor = color => {
-    if (color === "orange") {
-      return "#FB861B"
-    }
-  }
-
+export class indexButton extends Component {
   render() {
-    const { color, shape, text, link, linkColor } = this.props
+    const { text, link } = this.props
+    console.log("Text:", text)
 
-    const borderRadius = shape === "oval" ? "30px" : "none"
-    const backgroundColor = this.getColor(color)
+    const styleClasses = classnames({
+      [`${this.props.className}`]: this.props.className,
+      indexButtonContainer: true,
+    })
 
-    const style = {
-      backgroundColor,
-      borderRadius,
-    }
+    const style = this.props.style ? this.props.style : {}
 
     return (
-      <div className="indexButtonContainer" style={style}>
-        <Link href={link} style={{ color: linkColor }}>
+      <div className={styleClasses} style={style}>
+        <Link to={link} className="buttonText">
           {text}
         </Link>
       </div>
@@ -32,13 +30,13 @@ class indexButton extends Component {
   }
 }
 
-// put color, shape, link and linkColor in HOC
 indexButton.propTypes = {
-  color: propTypes.oneOf(["orange", "white", "black", "blue"]),
-  shape: propTypes.oneOf(["oval", "rectangle"]),
   text: propTypes.string,
   link: propTypes.string,
-  linkColor: propTypes.oneOf(["white", "black"]),
+  className: propTypes.string,
 }
 
-export default indexButton
+// export default indexButton
+// export default withSpacing(indexButton)
+// export default withStyles(indexButton)
+export default compose(withStyles, withSpacing)(indexButton)

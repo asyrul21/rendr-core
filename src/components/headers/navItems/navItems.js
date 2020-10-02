@@ -10,6 +10,7 @@ const navItems = ({ items }) => {
       {items.map((item, idx) => {
         return (
           <Link
+            key={idx}
             to={item.link}
             className="navItem"
             activeClassName="activeNavItem"

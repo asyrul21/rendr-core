@@ -14,12 +14,12 @@ import config from "./config.json"
 class Hero extends Component {
   render() {
     const contentLayoutClass =
-      config.layout === "singleColumn"
+      this.props.layout === "singleColumn"
         ? "singleColumnContent"
         : "doubleColumnContent"
 
     const textLayoutClass =
-      config.layout === "singleColumn"
+      this.props.layout === "singleColumn"
         ? "singleColumnHeroTextContainer"
         : "doubleColumnHeroTextContainer"
 
@@ -43,7 +43,7 @@ class Hero extends Component {
 
         {config.hasContent && (
           <div className={cx("heroContent", contentLayoutClass)}>
-            {config.sideImagePath && config.layout === "doubleColumn" && (
+            {config.sideImagePath && this.props.layout === "doubleColumn" && (
               <div
                 className="heroSideImage"
                 style={{
@@ -64,7 +64,14 @@ class Hero extends Component {
                   <p className="heroSubHeading">{config.texts.subHeading}</p>
                 )}
 
-                {config.button && <Button {...config.button} />}
+                {config.button && (
+                  <Button
+                    {...config.button}
+                    backgroundColor={config.button.color}
+                    borderRadius={config.button.borderRadius}
+                    fontColor={config.button.linkColor}
+                  />
+                )}
               </div>
             )}
           </div>
@@ -74,8 +81,8 @@ class Hero extends Component {
   }
 }
 
-// Hero.propTypes = {
-//   layout: propTypes.oneOf(["singleColumn", "doubleColumn"]),
-// }
+Hero.propTypes = {
+  layout: propTypes.oneOf(["singleColumn", "doubleColumn"]),
+}
 
 export default Hero

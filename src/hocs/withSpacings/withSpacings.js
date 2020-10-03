@@ -51,6 +51,10 @@ const withSpacings = ComposedComponent => {
       let left = 0
       let right = 0
 
+      if (this.props.marginCenter) {
+        return "0 auto"
+      }
+
       if (this.props.marginAll) {
         top = `${this.getPixelValue(this.props.marginAll)}`
         bottom = `${this.getPixelValue(this.props.marginAll)}`
@@ -103,8 +107,8 @@ const withSpacings = ComposedComponent => {
       return (
         <ComposedComponent
           {...rest}
-          className={this.props.className}
           style={style}
+          className={this.props.className}
         >
           {this.props.children}
         </ComposedComponent>
@@ -136,6 +140,8 @@ withSpacings.propTypes = {
   marginLeft: PropTypes.number,
   marginRight: PropTypes.number,
   marginAll: PropTypes.number,
+  // margin 0 auto
+  marginCenter: PropTypes.bool,
 
   // className
   className: PropTypes.string,

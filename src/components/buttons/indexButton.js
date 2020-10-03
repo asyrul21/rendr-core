@@ -34,6 +34,7 @@ indexButton.propTypes = {
   text: propTypes.string,
   link: propTypes.string,
   className: propTypes.string,
+  style: propTypes.object,
 }
 
 // export default indexButton

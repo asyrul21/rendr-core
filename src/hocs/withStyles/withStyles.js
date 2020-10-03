@@ -11,6 +11,8 @@ const withStyles = ComposedComponent => {
         fontColor,
         fontWeight,
         fontStyle,
+        fontSize,
+        lineHeight,
         backgroundColor,
         borderRadius,
         className,
@@ -28,10 +30,12 @@ const withStyles = ComposedComponent => {
       const style = {
         ...this.props.style,
         borderRadius: borderRadius ? `${borderRadius}px` : 0,
+        fontSize: fontSize ? `${fontSize}px` : "inherit",
+        lineHeight: lineHeight ? `${lineHeight}px` : "inherit",
       }
 
       return (
-        <ComposedComponent {...rest} className={styleClasses} style={style} />
+        <ComposedComponent {...rest} style={style} className={styleClasses} />
       )
     }
   }
@@ -69,6 +73,8 @@ withStyles.propTypes = {
   ]),
 
   fontStyle: propTypes.oneOf(["normal", "italic"]),
+  fontSize: propTypes.number,
+  lineHeight: propTypes.number,
 
   backgroundColor: propTypes.oneOf([
     "dark",

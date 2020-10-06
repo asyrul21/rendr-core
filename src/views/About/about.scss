@@ -1,3 +1,31 @@
 .aboutContainer {
   margin: 0 auto;
 }
+
+.sectionTitle_theTeam {
+  text-align: center;
+
+  height: 88px;
+  width: 100%;
+
+  border-top: 4px solid #98c345;
+  border-bottom: 4px solid #98c345;
+  color: #98c345;
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 88px;
+
+  margin-top: 170px;
+}
+
+.aboutPage_orgChartContainer {
+  // border: red solid 2px;
+
+  width: 100%;
+  min-height: 400px;
+
+  padding-top: 100px;
+
+  margin-bottom: 200px;
+}

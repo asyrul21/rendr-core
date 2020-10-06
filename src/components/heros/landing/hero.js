@@ -1,15 +1,17 @@
 import React, { Component } from "react"
 import propTypes from "prop-types"
-import cx from "classNames"
+import cx from "classnames"
 
 // import style
 import "./hero.scss"
 
 // import component
-import Button from "../../buttons/indexButton"
+import Button from "src/components/buttons/indexButton"
 
 // config
 import config from "./config.json"
+// data
+import data from "static/data/indexPage/indexPage-data.json"
 
 class Hero extends Component {
   render() {
@@ -51,24 +53,24 @@ class Hero extends Component {
                 }}
               />
             )}
-            {config.texts && (
+            {data && (
               <div className={cx("heroTextContainer", textLayoutClass)}>
-                {config.texts.heading && (
+                {data.heading && (
                   <h1
                     className="heroHeading"
-                    dangerouslySetInnerHTML={{ __html: config.texts.heading }}
+                    dangerouslySetInnerHTML={{ __html: data.heading }}
                   />
                 )}
 
-                {config.texts.subHeading && (
-                  <p className="heroSubHeading">{config.texts.subHeading}</p>
+                {data.subHeading && (
+                  <p className="heroSubHeading">{data.subHeading}</p>
                 )}
 
                 {config.button && (
                   <Button
                     {...config.button}
+                    text={data.button}
                     backgroundColor={config.button.color}
-                    borderRadius={config.button.borderRadius}
                     fontColor={config.button.linkColor}
                   />
                 )}

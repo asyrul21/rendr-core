@@ -78,6 +78,24 @@ plugins: [
 @import "./fonts/Open_Sans/OPEN_SANS.scss";
 ```
 
+## Setup Absolute Import
+
+[Reference: Gatsby Plugin Root Import](https://www.gatsbyjs.com/plugins/gatsby-plugin-root-import/)
+
+1. install
+
+```bash
+npm install --save-dev gatsby-plugin-root-import
+```
+
+2. Add into gatsby-config.js
+
+```javascript
+module.exports = {
+  plugins: ["gatsby-plugin-root-import"],
+}
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

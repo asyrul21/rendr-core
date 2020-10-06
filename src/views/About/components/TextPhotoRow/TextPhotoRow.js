@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react"
-import TextBlock from "../../../../components/textBlock/textBlock"
-import ImageContainer from "../../../../containers/ImageContainer/ImageContainer"
+import TextBlock from "src/components/textBlock/textBlock"
+import Image from "src/containers/Image/Image"
 import propTypes from "prop-types"
 
 import "./TextPhotoRow.scss"
@@ -8,39 +8,40 @@ import "./TextPhotoRow.scss"
 class TextPhotoRow extends Component {
   renderTextBlock = props => {
     const { heading, paragraphs } = props
-    return (
-      <TextBlock
-        heading="Who are we?"
-        paragraphs={[
-          "The Fun Factory strives towards this by first, engaging tutors who love children and possess the passion to develop them into happy and smart individuals.",
-          "This, coupled with a syllabus designed specially to bring out the best in your child are the elements that make The Fun Factory the best choice for your child.",
-        ]}
-      ></TextBlock>
-    )
+    return <TextBlock heading={heading} paragraphs={paragraphs}></TextBlock>
+  }
+
+  renderImage = props => {
+    const { path, path_WEBP, path_JPEG2000 } = props.image
+
+    if (path_WEBP && path_JPEG2000) {
+      return <Image path_WEBP={path_WEBP} path_JPEG2000={path_JPEG2000}></Image>
+    }
+    return <Image path={path}></Image>
   }
 
   render() {
-    const { pictureFirst, pictureLast, heading, paragraphs } = this.props
+    const { pictureFirst, pictureLast } = this.props
 
     return (
       <div className="textPhotoRow_container">
         {pictureLast && (
           <Fragment>
             <div className="textPhotoRow_textBlock">
-              {this.renderTextBlock({ heading, paragraphs })}
+              {this.renderTextBlock(this.props)}
             </div>
             <div className="textPhotoRow_photoContainer">
-              <ImageContainer path="/static/images/about/about1.png"></ImageContainer>
+              {this.renderImage(this.props)}
             </div>
           </Fragment>
         )}
         {pictureFirst && (
           <Fragment>
             <div className="textPhotoRow_photoContainer">
-              <ImageContainer path="/static/images/about/about1.png"></ImageContainer>
+              {this.renderImage(this.props)}
             </div>
             <div className="textPhotoRow_textBlock">
-              {this.renderTextBlock({ heading, paragraphs })}
+              {this.renderTextBlock(this.props)}
             </div>
           </Fragment>
         )}
@@ -50,10 +51,30 @@ class TextPhotoRow extends Component {
 }
 
 TextPhotoRow.propTypes = {
+  /*
+   *
+   * either to put the photo first then text */
   pictureFirst: propTypes.bool,
+  /*
+   *
+   * either to put the text first then photo */
   pictureLast: propTypes.bool,
+  /*
+   *
+   * the header of the text */
   heading: propTypes.string,
+  /*
+   *
+   * the paragraphs */
   paragraphs: propTypes.arrayOf(propTypes.string),
+  /*
+   *
+  /* the image path object */
+  image: propTypes.objectOf({
+    path: propTypes.string,
+    path_WEBP: propTypes.string,
+    path_JPEG2000: propTypes.string,
+  }),
 }
 
 export default TextPhotoRow

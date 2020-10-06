@@ -4,6 +4,12 @@ import classnames from "classnames"
 
 import "./withStyles.scss"
 
+// usage the style tag is a big RED FLAG NO.
+// because style tags overwrites the classes which makes
+// this approach almost unusable
+// future solution: define multiple classes in scss
+// use classes only. Not style tag
+
 const withStyles = ComposedComponent => {
   class GenericStylesWrapper extends Component {
     render() {
@@ -27,16 +33,7 @@ const withStyles = ComposedComponent => {
         [`backgroundColor-${backgroundColor}`]: backgroundColor,
       })
 
-      const style = {
-        ...this.props.style,
-        borderRadius: borderRadius ? `${borderRadius}px` : 0,
-        fontSize: fontSize ? `${fontSize}px` : "inherit",
-        lineHeight: lineHeight ? `${lineHeight}px` : "inherit",
-      }
-
-      return (
-        <ComposedComponent {...rest} style={style} className={styleClasses} />
-      )
+      return <ComposedComponent {...rest} className={styleClasses} />
     }
   }
 
@@ -73,8 +70,6 @@ withStyles.propTypes = {
   ]),
 
   fontStyle: propTypes.oneOf(["normal", "italic"]),
-  fontSize: propTypes.number,
-  lineHeight: propTypes.number,
 
   backgroundColor: propTypes.oneOf([
     "dark",
@@ -92,8 +87,6 @@ withStyles.propTypes = {
     "yellow",
     "purple",
   ]),
-  borderRadius: propTypes.number,
-  opacity: propTypes.number,
 
   // className
   className: propTypes.string,

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import ContentLayout from "../layouts/ContentLayout/ContentLayout"
 
 // import view

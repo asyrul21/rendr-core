@@ -1,27 +1,24 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import { compose } from "redux"
+// import { compose } from "redux"
 import propTypes from "prop-types"
-import withSpacing from "../../hocs/withSpacings/withSpacings"
-import withStyles from "../../hocs/withStyles/withStyles"
+// import withSpacing from "../../hocs/withSpacings/withSpacings"
+import withStyles from "src/hocs/withStyles/withStyles"
 import classnames from "classnames"
 
 import "./indexButton.scss"
 
 export class indexButton extends Component {
   render() {
-    const { text, link } = this.props
-    console.log("Text:", text)
+    const { text, link, className } = this.props
 
     const styleClasses = classnames({
-      [`${this.props.className}`]: this.props.className,
       indexButtonContainer: true,
+      [`${className}`]: className,
     })
 
-    const style = this.props.style ? this.props.style : {}
-
     return (
-      <div className={styleClasses} style={style}>
+      <div className={styleClasses}>
         <Link to={link} className="buttonText">
           {text}
         </Link>
@@ -31,13 +28,20 @@ export class indexButton extends Component {
 }
 
 indexButton.propTypes = {
+  /*
+   *
+   * the text within the button */
   text: propTypes.string,
+  /*
+   *
+   * the link or route which the button leads to */
   link: propTypes.string,
+  /*
+   *
+   * any applied classnames */
   className: propTypes.string,
-  style: propTypes.object,
 }
 
-// export default indexButton
 // export default withSpacing(indexButton)
-// export default withStyles(indexButton)
-export default compose(withStyles, withSpacing)(indexButton)
+export default withStyles(indexButton)
+// export default compose(withStyles, withSpacing)(indexButton)

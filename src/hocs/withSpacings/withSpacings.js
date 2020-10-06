@@ -1,6 +1,12 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
+// usage the style tag is a big RED FLAG NO.
+// because style tags overwrites the classes which makes
+// this approach almost unusable
+// future solution: define multiple classes in scss
+// use classes only. Not style tag
+
 const withSpacings = ComposedComponent => {
   class SpacingsWrapper extends Component {
     getPaddingValue = () => {

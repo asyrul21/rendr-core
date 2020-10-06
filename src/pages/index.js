@@ -3,7 +3,7 @@ import React from "react"
 import ContentLayout from "../layouts/ContentLayout/ContentLayout"
 
 // import view
-import Index from "../views/Index/index"
+import Landing from "../views/Landing/landing"
 
 // SEO
 import SEO from "../components/seo"
@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <ContentLayout paddingTop={45}>
       <SEO title="Index Page" />
-      <Index />
+      <Landing />
     </ContentLayout>
   )
 }

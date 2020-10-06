@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react"
 import classnames from "classnames"
 
-import "./ImageContainer.scss"
+import "./Image.scss"
+
+// this component needs a wrapper to determine its width and height
 
 // use classname to have shared image properties
-class ImageContainer extends Component {
+class Image extends Component {
   renderImage(useFallback) {
     const styleClasses = classnames({
       [`${this.props.className}`]: this.props.className,
@@ -37,4 +39,4 @@ class ImageContainer extends Component {
   }
 }
 
-export default ImageContainer
+export default Image

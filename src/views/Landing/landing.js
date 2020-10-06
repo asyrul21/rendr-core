@@ -1,12 +1,12 @@
 import React, { Fragment } from "react"
 
 // import component
-import Hero from "../../components/heros/index/hero"
+import Hero from "../../components/heros/landing/hero"
 
 // import style
-import "./index.scss"
+import "./landing.scss"
 
-const Index = () => {
+const Landing = () => {
   return (
     <Fragment>
       <Hero layout="doubleColumn" />
@@ -14,4 +14,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Landing

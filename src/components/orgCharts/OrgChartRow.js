@@ -31,11 +31,11 @@ OrgChartRow.propTypes = {
   /*
    *
    * the data to render */
-  data: propTypes.arrayOf(
-    propTypes.objectOf({
+  data: propTypes.shape(
+    propTypes.shape({
       title: propTypes.string,
       people: arrayOf(
-        propTypes.objectOf({
+        propTypes.shape({
           name: propTypes.string,
           education: propTypes.string,
           position: propTypes.string,

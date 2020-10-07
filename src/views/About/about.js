@@ -1,4 +1,5 @@
 import React from "react"
+import cx from "classnames"
 
 //import GenericContainer
 // import GenericContainer from "../../containers/GenericContainer/GenericContainer"
@@ -8,6 +9,7 @@ import Content from "../../containers/Content/Content"
 import TextPhotoRow from "./components/TextPhotoRow/TextPhotoRow"
 import SectionTitle from "src/components/sectionTitles/sectionTitle1/sectionTitle"
 import OrgChartRow from "src/components/orgCharts/OrgChartRow"
+import ImageSlider from "src/components/imageSlider/imageSlider"
 
 // data
 import data from "static/data/aboutPage/aboutPage-data"
@@ -34,7 +36,7 @@ const About = () => {
       />
       <SectionTitle
         text="The Team"
-        className="sectionTitle_theTeam"
+        className={cx("aboutPage_sectionTitle", "sectionTitle_theTeam")}
       ></SectionTitle>
 
       <div className="aboutPage_orgChartContainer">
@@ -42,21 +44,15 @@ const About = () => {
         <OrgChartRow data={data.orgChartRows[1]} />
         <OrgChartRow data={data.orgChartRows[1]} />
       </div>
+
+      <SectionTitle
+        text="The Space"
+        className={cx("aboutPage_sectionTitle", "sectionTitle_theSpace")}
+      ></SectionTitle>
+
+      <ImageSlider images={data.imageSlider.images} imageWidth={750} />
     </Content>
   )
 }
 
 export default About
-
-// <Fragment>
-//       <GenericContainer
-//         display="flex"
-//         width="90%"
-//         marginCenter
-//         minHeight="400px"
-//         justifyContent="space-between"
-//       >
-//         <GenericContainer width={400}>Texts go here</GenericContainer>
-//         <GenericContainer width={400}> Picture Goes here</GenericContainer>
-//       </GenericContainer>
-//     </Fragment>

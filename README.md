@@ -82,6 +82,8 @@ plugins: [
 
 [Reference: Gatsby Plugin Root Import](https://www.gatsbyjs.com/plugins/gatsby-plugin-root-import/)
 
+[Another reference](https://stackoverflow.com/questions/61484861/how-to-use-absolute-imports-in-gatsby-with-eslint)
+
 1. install
 
 ```bash

@@ -38,13 +38,15 @@ export const OrgChartRowItems = props => {
 /* Prop Definition */
 OrgChartRowItems.propTypes = {
   items: arrayOf(
-    propTypes.objectOf({
+    propTypes.shape({
       name: propTypes.string,
       education: propTypes.string,
       position: propTypes.string,
-      path: propTypes.string,
-      path_WEBP: propTypes.string,
-      path_JPEG2000: propTypes.string,
+      image: propTypes.shape({
+        path: propTypes.string,
+        path_WEBP: propTypes.string,
+        path_JPEG2000: propTypes.string,
+      }),
     })
   ),
   /*

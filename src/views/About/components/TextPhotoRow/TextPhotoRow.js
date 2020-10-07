@@ -70,7 +70,7 @@ TextPhotoRow.propTypes = {
   /*
    *
   /* the image path object */
-  image: propTypes.objectOf({
+  image: propTypes.shape({
     path: propTypes.string,
     path_WEBP: propTypes.string,
     path_JPEG2000: propTypes.string,

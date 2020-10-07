@@ -1,0 +1,76 @@
+.imageSliderContainer {
+  border: 2px solid red;
+
+  width: 100%;
+  height: 550px;
+
+  margin-top: 120px;
+  margin-bottom: 120px;
+  padding: 0 90px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.imageSlider_navButton {
+  width: 50px;
+  height: 90px;
+  border: blue 2px solid;
+  background-color: blue;
+
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0.5;
+  transition: opacity ease 0.2s;
+
+  cursor: pointer;
+}
+
+.imageSlider_navButton:hover {
+  opacity: 1;
+}
+
+.imageSlider_previousButton {
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+}
+
+.imageSlider_forwardButton {
+  right: 0;
+  top: 50%;
+  bottom: 50%;
+}
+
+.imageSlider_imagesContainer {
+  min-width: 100%;
+  height: 95%;
+
+  border: green 2px solid;
+
+  display: flex;
+  justify-content: center;
+
+  transition: transform 0.5s linear;
+
+  white-space: nowrap !important;
+
+  position: absolute;
+  left: 0;
+}
+
+.imageSlider_imageItem {
+  // width is defined by component
+  height: 100%;
+
+  // adjust this as screen shrinks
+  width: 720px;
+  margin: 0 400px;
+
+  border: black 2px solid;
+}

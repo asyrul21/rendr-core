@@ -1,5 +1,5 @@
 // template to create a new component
-import React from "react"
+import React, { Component } from "react"
 import propTypes from "prop-types"
 import classnames from "classnames"
 // import { compose } from "redux"

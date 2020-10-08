@@ -9,7 +9,7 @@ import Content from "../../containers/Content/Content"
 import TextPhotoRow from "./components/TextPhotoRow/TextPhotoRow"
 import SectionTitle from "src/components/sectionTitles/sectionTitle1/sectionTitle"
 import OrgChartRow from "src/components/orgCharts/OrgChartRow"
-import ImageSlider from "src/components/imageSlider/imageSlider"
+import ImageSlider from "src/components/imageSlider/container/imageSlider"
 
 // data
 import data from "static/data/aboutPage/aboutPage-data"

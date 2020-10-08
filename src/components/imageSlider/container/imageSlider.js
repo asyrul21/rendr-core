@@ -4,7 +4,7 @@ import propTypes from "prop-types"
 import classnames from "classnames"
 
 // component
-import Image from "src/containers/Image/Image"
+import Slider from "../component/slider"
 
 // import style
 import "./imageSlider.scss"
@@ -13,36 +13,57 @@ class ImageSlider extends Component {
   constructor() {
     super()
     this.state = {
+      calculatedMargin: 0,
       containerWidth: 0,
       translateValue: 0,
       currentImage: 0,
     }
-
-    const calculatedMargin = 0
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.updateContainerWidth)
-  }
-
-  updateContainerWidth = () => {
+    window.addEventListener("resize", this.onUpdateContainerWidth)
     const containerWidth = this.divElement.clientWidth
+    const calculatedMargin = this.calculateMargin(containerWidth)
     this.setState({
       containerWidth,
+      calculatedMargin,
+    })
+  }
+
+  calculateMargin = containerWidth => {
+    return (containerWidth - this.props.imageWidth) / 2
+  }
+
+  onUpdateContainerWidth = () => {
+    const containerWidth = this.divElement.clientWidth
+    const calculatedMargin = this.calculateMargin(containerWidth)
+
+    this.setState(prevState => {
+      const marginDifference = prevState.calculatedMargin - calculatedMargin
+      console.log("old margin:", prevState.calculatedMargin)
+      console.log("new margin:", calculatedMargin)
+      console.log("margin difference:", marginDifference)
+
+      const translateValue =
+        prevState.currentImage !== 0
+          ? prevState.translateValue + marginDifference * 2
+          : prevState.translateValue
+
+      return {
+        containerWidth,
+        calculatedMargin,
+        translateValue,
+      }
     })
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateContainerWidth)
+    window.removeEventListener("resize", this.onUpdateContainerWidth)
   }
 
   handleClickForward = event => {
     if (event) {
-      const newTranslateValue =
-        this.state.translateValue -
-        this.props.imageWidth -
-        this.calculatedMargin * 2
-
+      const newTranslateValue = this.updateTranslateForward()
       if (this.state.currentImage < this.props.images.length - 1) {
         const nextImage = this.state.currentImage + 1
         return this.setState({
@@ -53,13 +74,15 @@ class ImageSlider extends Component {
     }
   }
 
+  updateTranslateForward = (imageWidth = this.props.imageWidth) => {
+    return (
+      this.state.translateValue - imageWidth - this.state.calculatedMargin * 2
+    )
+  }
+
   handleClickPrevious = event => {
     if (event) {
-      const newTranslateValue =
-        this.state.translateValue +
-        this.props.imageWidth +
-        this.calculatedMargin * 2
-
+      const newTranslateValue = this.updateTranslateBackward()
       if (this.state.currentImage !== 0) {
         const nextImage = this.state.currentImage - 1
         return this.setState({
@@ -68,6 +91,12 @@ class ImageSlider extends Component {
         })
       }
     }
+  }
+
+  updateTranslateBackward = (imageWidth = this.props.imageWidth) => {
+    return (
+      this.state.translateValue + imageWidth + this.state.calculatedMargin * 2
+    )
   }
 
   render() {
@@ -79,15 +108,12 @@ class ImageSlider extends Component {
       [`${className}`]: className,
     })
 
-    // define translate value
-    const translateStyle = {
-      transform: `translateX(${this.state.translateValue}px)`,
+    console.log("State:", this.state)
+    const sliderProps = {
+      ...this.state,
+      imageWidth,
+      data: images,
     }
-
-    // this calculates how much margin we need to keep the images center
-    this.calculatedMargin = (this.state.containerWidth - imageWidth) / 2
-
-    console.log("Container width:", this.state.containerWidth)
     return (
       <div
         className={styleClasses}
@@ -102,22 +128,7 @@ class ImageSlider extends Component {
           )}
           onClick={this.handleClickPrevious}
         ></div>
-        <div className="imageSlider_imagesContainer" style={translateStyle}>
-          {images.map((image, idx) => {
-            return (
-              <div
-                key={idx}
-                className="imageSlider_imageItem"
-                style={{
-                  width: `${imageWidth}px`,
-                  margin: `0 ${this.calculatedMargin}px`,
-                }}
-              >
-                <Image {...image} />
-              </div>
-            )
-          })}
-        </div>
+        <Slider {...sliderProps} />
         <div
           className={classnames(
             "imageSlider_navButton",
@@ -155,3 +166,5 @@ ImageSlider.propTypes = {
 export default ImageSlider
 
 // https://stackoverflow.com/questions/19014250/rerender-view-on-browser-resize-with-react
+
+// https://stackoverflow.com/questions/35153599/reactjs-get-height-of-an-element

@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
 
-  overflow: hidden;
+  //   overflow: hidden;
 }
 
 .imageSlider_navButton {
@@ -45,32 +45,4 @@
   right: 0;
   top: 50%;
   bottom: 50%;
-}
-
-.imageSlider_imagesContainer {
-  min-width: 100%;
-  height: 95%;
-
-  border: green 2px solid;
-
-  display: flex;
-  justify-content: center;
-
-  transition: transform 0.5s linear;
-
-  white-space: nowrap !important;
-
-  position: absolute;
-  left: 0;
-}
-
-.imageSlider_imageItem {
-  // width is defined by component
-  height: 100%;
-
-  // adjust this as screen shrinks
-  width: 720px;
-  margin: 0 400px;
-
-  border: black 2px solid;
 }

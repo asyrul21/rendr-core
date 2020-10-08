@@ -5,8 +5,7 @@ import cx from "classnames"
 import Content from "../../containers/Content/Content"
 import TextBlock from "src/components/textBlock/textBlock"
 import SimpleForm from "src/components/forms/simple/form"
-
-// data
+import ContactInformation from "src/components/contactInformation/contactInformation"
 
 // data
 import data from "static/data/contactPage/contactPage-data.json"
@@ -23,11 +22,22 @@ const Contact = () => {
           paragraphs={data.text.paragraphs}
         />
         <div className="contact_formContainer">
-          <SimpleForm />
+          <SimpleForm
+            field1={data.formPlaceholders.field1}
+            field2={data.formPlaceholders.field2}
+            field3={data.formPlaceholders.field3}
+            handleSubmit={event => {
+              console.log("Submitted!")
+              console.log("event:", event)
+            }}
+          />
         </div>
       </div>
       <div className={cx("contact_column", "contact_rightCol")}>
-        This is the form
+        <div className="contact_googleMapAPI">Google map go here</div>
+        <div className="contact_contactInfoContainer">
+          <ContactInformation data={data.contactInformation} />
+        </div>
       </div>
     </Content>
   )

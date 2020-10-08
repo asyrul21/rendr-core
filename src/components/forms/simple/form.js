@@ -21,9 +21,9 @@ export class Form extends Component {
     }
   }
 
-  handleSubmit = event => {
+  handleFormSubmit = (event, callback) => {
     event.preventDefault()
-    console.log("Submitted!")
+    callback(event)
   }
 
   handleChange = event => {
@@ -37,23 +37,20 @@ export class Form extends Component {
   }
 
   render() {
-    const { className } = this.props
+    const { field1, field2, field3, handleSubmit, className } = this.props
     // define container classes here
     const styleClasses = classnames({
       formContainer: true,
       [`${className}`]: className,
     })
 
-    console.log("Name:", this.state.fields.name)
-    console.log("Email:", this.state.fields.email)
-    console.log("Message:", this.state.fields.message)
     return (
       <div className={styleClasses}>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={e => this.handleFormSubmit(e, handleSubmit)}>
           <input
             name="name"
             type="text"
-            placeholder="name"
+            placeholder={field1}
             className={classnames("form_input", "simpleForm_inputText")}
             value={this.state.fields.name || ""}
             onChange={this.handleChange}
@@ -61,14 +58,14 @@ export class Form extends Component {
           <input
             name="email"
             type="email"
-            placeholder="email"
+            placeholder={field2}
             className={classnames("form_input", "simpleForm_inputText")}
             value={this.state.fields.email || ""}
             onChange={this.handleChange}
           />
           <textarea
             name="message"
-            placeholder="Type your message..."
+            placeholder={field3}
             className={classnames("form_input", "simpleForm_textArea")}
             value={this.state.fields.message || ""}
             onChange={this.handleChange}
@@ -78,6 +75,29 @@ export class Form extends Component {
       </div>
     )
   }
+}
+
+Form.propTypes = {
+  /*
+   *
+   * the placeholder for the top input */
+  field1: propTypes.string,
+  /*
+   *
+   * the placeholder for the second input */
+  field2: propTypes.string,
+  /*
+   *
+   * placeholder for the textarea input */
+  field3: propTypes.string,
+  /*
+   *
+   * function callback of handleSubmit */
+  handleSubmit: propTypes.func,
+  /*
+   *
+   * any applied classnames */
+  className: propTypes.string,
 }
 
 export default Form

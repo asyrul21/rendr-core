@@ -4,7 +4,8 @@ import propTypes from "prop-types"
 import classnames from "classnames"
 
 // component
-import Slider from "../component/slider"
+import Slider from "../components/slider/slider"
+import Caption from "src/components/caption/caption"
 
 // import style
 import "./imageSlider.scss"
@@ -40,13 +41,10 @@ class ImageSlider extends Component {
 
     this.setState(prevState => {
       const marginDifference = prevState.calculatedMargin - calculatedMargin
-      console.log("old margin:", prevState.calculatedMargin)
-      console.log("new margin:", calculatedMargin)
-      console.log("margin difference:", marginDifference)
-
       const translateValue =
         prevState.currentImage !== 0
-          ? prevState.translateValue + marginDifference * 2
+          ? prevState.translateValue +
+            marginDifference * 2 * this.state.currentImage
           : prevState.translateValue
 
       return {
@@ -108,7 +106,6 @@ class ImageSlider extends Component {
       [`${className}`]: className,
     })
 
-    console.log("State:", this.state)
     const sliderProps = {
       ...this.state,
       imageWidth,
@@ -127,14 +124,18 @@ class ImageSlider extends Component {
             "imageSlider_previousButton"
           )}
           onClick={this.handleClickPrevious}
-        ></div>
-        <Slider {...sliderProps} />
+        />
         <div
           className={classnames(
             "imageSlider_navButton",
             "imageSlider_forwardButton"
           )}
           onClick={this.handleClickForward}
+        />
+        <Slider {...sliderProps} />
+        <Caption
+          text={images[this.state.currentImage].caption}
+          fontColor="black"
         />
       </div>
     )

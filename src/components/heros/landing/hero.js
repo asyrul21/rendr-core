@@ -6,7 +6,7 @@ import cx from "classnames"
 import "./hero.scss"
 
 // import component
-import Button from "src/components/buttons/indexButton"
+import Button from "src/components/buttons/indexButton/indexButton"
 
 // config
 import config from "./config.json"

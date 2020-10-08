@@ -135,7 +135,7 @@ class ImageSlider extends Component {
         <Slider {...sliderProps} />
         <Caption
           text={images[this.state.currentImage].caption}
-          fontColor="black"
+          fontColor="dark"
         />
       </div>
     )

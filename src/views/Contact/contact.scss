@@ -1,0 +1,25 @@
+.contact_Content_layout {
+  //   border: green 2px solid;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact_column {
+  //   border: blue 2px solid;
+  min-height: 80vh;
+}
+
+.contact_leftCol {
+  width: 47%;
+}
+
+.contact_rightCol {
+  width: 47%;
+}
+
+.contact_formContainer {
+  //   border: green 2px solid;
+  margin-top: 50px;
+}

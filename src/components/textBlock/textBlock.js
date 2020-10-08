@@ -10,13 +10,14 @@ const textBlock = props => {
   return (
     <div className="textBlock_container">
       <h4 className="textBlock_heading">{heading}</h4>
-      {paragraphs.map((paragraph, idx) => {
-        return (
-          <p key={idx} className="textBlock_paragraph">
-            {paragraph}
-          </p>
-        )
-      })}
+      {paragraphs &&
+        paragraphs.map((paragraph, idx) => {
+          return (
+            <p key={idx} className="textBlock_paragraph">
+              {paragraph}
+            </p>
+          )
+        })}
     </div>
   )
 }

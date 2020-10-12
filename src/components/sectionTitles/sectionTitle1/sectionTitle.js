@@ -21,7 +21,7 @@ export const sectionTitle = props => {
 
   return (
     <div className={styleClasses}>
-      <h3>{text}</h3>
+      <p>{text}</p>
     </div>
   )
 }

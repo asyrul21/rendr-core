@@ -42,6 +42,4 @@ indexButton.propTypes = {
   className: propTypes.string,
 }
 
-// export default withSpacing(indexButton)
 export default withStyles(indexButton)
-// export default compose(withStyles, withSpacing)(indexButton)

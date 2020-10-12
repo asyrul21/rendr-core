@@ -98,6 +98,10 @@ module.exports = {
 }
 ```
 
+# Errors and References
+
+[Component changing an uncontrolled input of type text to controlled](https://stackoverflow.com/questions/47012169/a-component-is-changing-an-uncontrolled-input-of-type-text-to-be-controlled-erro)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

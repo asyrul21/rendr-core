@@ -3,21 +3,21 @@ import propTypes from "prop-types"
 import BaseLayout from "../BaseLayout"
 
 const ContentLayout = props => {
-  const paddingTop = props.paddingTop ? `${props.paddingTop}px` : "0"
-
-  const style = {
-    paddingTop,
-  }
+  const { nav } = props
 
   return (
-    <BaseLayout>
-      <div style={style}>{props.children}</div>
+    <BaseLayout nav={nav}>
+      <div>{props.children}</div>
     </BaseLayout>
   )
 }
 
 ContentLayout.propTypes = {
-  paddingTop: propTypes.number,
+  nav: propTypes.bool
+}
+
+ContentLayout.defaultProps = {
+  nav: true,
 }
 
 export default ContentLayout

@@ -1,0 +1,12 @@
+.priceCardsContainer {
+  //   border: white 2px solid;
+  width: 60%;
+  min-height: 400px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 180px;
+}

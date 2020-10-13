@@ -4,12 +4,12 @@
   color: #223c66;
 }
 
-.landing_whyUs {
+.landing_section_whyUs {
   //   border: red 2px solid;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+
+  min-height: 650px;
 }
 
 .landing_programmes {
@@ -19,7 +19,14 @@
 
   position: relative;
 
-  height: 820px;
+  // overwrite min height
+  min-height: 820px;
+  //   height: 820px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .landing_section_title_programmes {

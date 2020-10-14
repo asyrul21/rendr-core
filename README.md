@@ -104,6 +104,8 @@ module.exports = {
 
 [Component changing an uncontrolled input of type text to controlled](https://stackoverflow.com/questions/47012169/a-component-is-changing-an-uncontrolled-input-of-type-text-to-be-controlled-erro)
 
+[Click and scroll to component](https://stackoverflow.com/questions/41692785/scroll-page-to-the-nested-react-component-on-a-button-click)
+
 ## Using React Reveal and Percentage Width
 
 Be careful when using percentages as width. If you are using React-Reveal's Fade as a wrapper, the width will break, because the Fade component does not have a width, hence e.g. 80% of none.

@@ -19,7 +19,6 @@ export const PriceCards = props => {
     [`${className}`]: className,
   })
 
-  let samplePriceCard = data[0]
   return (
     <div className={styleClasses}>
       {data.map((pricing, idx)=> {

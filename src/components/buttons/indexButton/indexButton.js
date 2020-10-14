@@ -9,8 +9,14 @@ import classnames from "classnames"
 import "./indexButton.scss"
 
 export class indexButton extends Component {
+
+  handleClick = (event, callback) => {
+    event.preventDefault()
+    callback(event)
+  }
+
   render() {
-    const { text, link, external, className } = this.props
+    const { text, link, external, onClick, className } = this.props
 
     const styleClasses = classnames({
       indexButtonContainer: true,
@@ -23,6 +29,15 @@ export class indexButton extends Component {
           <a href={link} className="buttonText">
             { text }
           </a>
+        </div>
+      )
+    }
+    else if(onClick){
+      return (
+        <div className={styleClasses} onClick={e => this.handleClick(e, onClick)}>
+          <div className="buttonText">
+            { text }
+          </div>
         </div>
       )
     }
@@ -51,6 +66,10 @@ indexButton.propTypes = {
    *
    * the link or route which the button leads to */
   link: propTypes.string,
+  /*
+   *
+   * what happens when user clicks */
+  onClick: propTypes.func,
   /*
    *
    * any applied classnames */

@@ -11,7 +11,15 @@ import Button from "src/components/buttons/indexButton/indexButton"
 import "./hero.scss"
 
 export const CustomHero = props => {
-  const { backgroundImage, logoImage, heading, subHeading, buttonText, link, className } = props
+  const { 
+      backgroundImage, 
+      logoImage, 
+      heading, 
+      subHeading, 
+      buttonText, 
+      link, 
+      onClickIndexButton, 
+      className } = props
 
   // define container classes here
   const styleClasses = classnames({
@@ -31,7 +39,12 @@ export const CustomHero = props => {
             </div>
             <h4 className="hero_heading">{heading}</h4>
             <div className="hero_subHeading">{subHeading}</div>
-            <Button text={buttonText} backgroundColor="white" fontColor="dark" className="hero_button"/>
+            {link && !onClickIndexButton &&
+                 <Button text={buttonText} backgroundColor="white" fontColor="dark" className="hero_button" link={link}/>
+            }
+            {onClickIndexButton && 
+                <Button text={buttonText} backgroundColor="white" fontColor="dark" className="hero_button" onClick={onClickIndexButton}/>
+            }
         </div>
     </div>
   )
@@ -65,6 +78,10 @@ CustomHero.propTypes = {
    *
    * the link or route which the button leads to */
   link: propTypes.string,
+  /*
+   *
+   * onClick listener callback */
+  onClickIndexButton: propTypes.func,
   /*
    *
    * any applied classnames */

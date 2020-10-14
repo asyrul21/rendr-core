@@ -14,7 +14,7 @@ export const InfoCards = props => {
 
   // define container classes here
   const styleClasses = classnames({
-    infoCardContainer: true,
+    infoCardsContainer: true,
     [`${className}`]: className,
   })
 

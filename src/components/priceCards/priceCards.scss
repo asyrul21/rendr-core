@@ -1,6 +1,7 @@
 .priceCardsContainer {
   //   border: white 2px solid;
-  width: 60%;
+  //   background: green;
+  width: 60vw;
   min-height: 400px;
 
   display: flex;
@@ -10,3 +11,6 @@
 
   margin-bottom: 180px;
 }
+
+// be careful when using percentages as width. If you are using React-Reveal's Fade as a wrapper, the width will break, because the Fade component does not have a width, hence e.g. 80% of none.
+// solution: use vw instead

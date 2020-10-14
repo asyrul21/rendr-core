@@ -98,9 +98,30 @@ module.exports = {
 }
 ```
 
-# Errors and References
+# Errors, Issues and References
 
 [Component changing an uncontrolled input of type text to controlled](https://stackoverflow.com/questions/47012169/a-component-is-changing-an-uncontrolled-input-of-type-text-to-be-controlled-erro)
+
+## Using React Reveal and Percentage Width
+
+Be careful when using percentages as width. If you are using React-Reveal's Fade as a wrapper, the width will break, because the Fade component does not have a width, hence e.g. 80% of none.
+
+Solution: use vw instead.
+
+```scss
+.priceCardsContainer {
+  width: 80vw;
+  // width: 80% // will not work if you have a React Reveal's component as a wrapper - because the RR's components' do not have width property, causing it to be 80% of nothing, which breaks the width
+  min-height: 400px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 180px;
+}
+```
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">

@@ -1,7 +1,11 @@
 .contentContainer {
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
   min-height: 90vh;
-  margin-top: 90px;
-  margin-bottom: 100px;
+  // margin-top: 90px;
+  // margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

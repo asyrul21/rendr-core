@@ -10,7 +10,7 @@ import Button from "src/components/buttons/indexButton/indexButton"
 import "./PriceCard.scss"
 
 export const PriceCard = props => {
-  const { heading, subHeading, text, price, buttonText, className } = props
+  const { heading, subHeading, text, price, buttonText, buttonLink, className } = props
 
   // define container classes here
   const styleClasses = classnames({
@@ -29,7 +29,7 @@ export const PriceCard = props => {
         </div>
         <p className="priceCard_price">{ price }</p>
         <Button text={buttonText} backgroundColor="navy-blue" fontColor="white"
-        className="priceCard_button"/>
+        className="priceCard_button" external link={buttonLink}/>
     </div>
   )
 }
@@ -56,6 +56,10 @@ PriceCard.propTypes = {
     *
     * the text on the button */
     buttonText: propTypes.string,
+    /*
+    *
+    * where the buttons leads to */
+   buttonLink: propTypes.string,
     /*
     *
     * any applied classnames */

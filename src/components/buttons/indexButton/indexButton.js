@@ -10,20 +10,31 @@ import "./indexButton.scss"
 
 export class indexButton extends Component {
   render() {
-    const { text, link, className } = this.props
+    const { text, link, external, className } = this.props
 
     const styleClasses = classnames({
       indexButtonContainer: true,
       [`${className}`]: className,
     })
 
-    return (
-      <div className={styleClasses}>
-        <Link to={link} className="buttonText">
-          {text}
-        </Link>
-      </div>
-    )
+    if(external){
+      return (
+        <div className={styleClasses}>
+          <a href={link} className="buttonText">
+            { text }
+          </a>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className={styleClasses}>
+          <Link to={link} className="buttonText">
+            {text}
+          </Link>
+        </div>
+      )
+    }
   }
 }
 
@@ -32,6 +43,10 @@ indexButton.propTypes = {
    *
    * the text within the button */
   text: propTypes.string,
+  /*
+   *
+   * the if the button link leads to external URLS */
+  external: propTypes.bool,
   /*
    *
    * the link or route which the button leads to */

@@ -100,6 +100,8 @@ module.exports = {
 
 # Errors, Issues and References
 
+[Using Google Drive as a Storage Service to Download File on Button Click](https://www.labnol.org/internet/direct-links-for-google-drive/28356/)
+
 [Component changing an uncontrolled input of type text to controlled](https://stackoverflow.com/questions/47012169/a-component-is-changing-an-uncontrolled-input-of-type-text-to-be-controlled-erro)
 
 ## Using React Reveal and Percentage Width

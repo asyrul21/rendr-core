@@ -7,19 +7,19 @@
       "/**.png": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "/static/images/**.png": {
+      "/src/images/**.png": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "/static/images/**.jpg": {
+      "/src/images/**.jpg": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "/static/images/**.webp": {
+      "/src/images/**.webp": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "/static/images/**.jp2": {
+      "/src/images/**.jp2": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
-      "/static/data/**.json": {
+      "/src/data/**.json": {
         "Cache-Control": "public, max-age=31536000, immutable"
       },
       "/icons/*.png": {

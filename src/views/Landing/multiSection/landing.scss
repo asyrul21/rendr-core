@@ -49,7 +49,7 @@ $darkFont: #223c66;
 .landing_contact_text {
   font-weight: 200;
   font-size: 24px;
-  width: 632px;
+  max-width: 632px;
   //   border: green 2px solid;
   text-align: center;
   color: $darkFont;
@@ -59,4 +59,10 @@ $darkFont: #223c66;
 .landing_contact_button {
   background: $darkFont;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 360px) {
+  .landing_contact_text {
+    width: 300px;
+  }
 }

@@ -74,3 +74,32 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 1025px) {
+  // ipad pro
+  // item width should be less than 1000
+  .priceCardContainer {
+    width: 390px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  // item width should be less than 700
+  .priceCardContainer {
+    width: 325px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  // item width should be less than 400
+  .priceCardContainer {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .priceCardContainer {
+    width: 300px;
+    padding: 18px;
+  }
+}

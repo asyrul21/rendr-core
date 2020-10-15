@@ -106,6 +106,8 @@ module.exports = {
 
 [Click and scroll to component](https://stackoverflow.com/questions/41692785/scroll-page-to-the-nested-react-component-on-a-button-click)
 
+[Media Query: Larger Max width overriding Smaller max width](https://stackoverflow.com/questions/32629967/why-does-a-higher-max-width-in-media-queries-overwrite-a-lower-max-width/32630026) : Make sure larger max widths come _EARLIER_.
+
 ## Using React Reveal and Percentage Width
 
 Be careful when using percentages as width. If you are using React-Reveal's Fade as a wrapper, the width will break, because the Fade component does not have a width, hence e.g. 80% of none.

@@ -1,6 +1,7 @@
 .cardContainer {
+  //   border: red 2px solid;
   width: 400px;
-  height: 300px;
+  height: auto;
 
   padding: 20px;
 
@@ -29,6 +30,8 @@
 }
 
 .card_heading {
+  //   border: green 2px solid;
+  min-height: 50px;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -47,4 +50,28 @@
   text-align: center;
 
   color: black;
+}
+
+@media screen and (max-width: 825px) {
+  // phones in landscape
+  // item width should be less than 800
+  .cardContainer {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card_heading {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .cardContainer {
+    width: 300px;
+  }
+
+  .card_paragraph {
+    font-weight: 300;
+    font-size: 16px;
+  }
 }

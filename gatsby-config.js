@@ -1,5 +1,6 @@
 const path = require("path")
 
+console.log("DIRNAME:", __dirname);
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -16,13 +17,13 @@ module.exports = {
         static: path.join(__dirname, "public/static"),
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/public/static/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/public/static/images`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

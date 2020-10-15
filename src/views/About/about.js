@@ -12,7 +12,7 @@ import OrgChartRow from "src/components/orgCharts/OrgChartRow"
 import ImageSlider from "src/components/imageSlider/container/imageSlider"
 
 // data
-import data from "static/data/aboutPage/aboutPage-data.json"
+import data from "static/data/aboutPage/data.json"
 
 // import style
 import "./about.scss"

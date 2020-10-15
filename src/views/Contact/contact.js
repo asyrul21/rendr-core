@@ -8,7 +8,7 @@ import SimpleForm from "src/components/forms/simple/form"
 import ContactInformation from "src/components/contactInformation/contactInformation"
 
 // data
-import data from "static/data/contactPage/contactPage-data.json"
+import data from "static/data/contactPage/data.json"
 
 // import style
 import "./contact.scss"

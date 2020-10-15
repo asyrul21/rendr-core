@@ -1,5 +1,6 @@
 const path = require("path")
 
+console.log("DIRNAME:", __dirname);
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,

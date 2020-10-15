@@ -129,6 +129,84 @@ Solution: use vw instead.
 }
 ```
 
+# Image Optimasation
+
+[Using WEBP](https://developers.google.com/speed/webp/docs/using)
+
+1. Run Script:
+
+```bash
+ cwebp -q 80 landing-coding.jpg -o landing-coding.webp
+```
+
+# Deployment
+
+Main reference:
+
+https://medium.com/@jacoboakley/deploy-a-next-js-app-on-heroku-69bcb01db1b7
+
+https://www.gatsbyjs.com/docs/deploying-to-heroku/
+
+1. Install and setup Heroku
+
+```bash
+<!-- Install -->
+brew tap heroku/brew && brew install heroku
+
+<!-- Create Heroku repo -->
+heroku create recode-masterclass
+
+<!-- IMPORTANT: add buildpacks -->
+
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
+```
+
+2. Define all static files in _static.json_
+
+See [Heroku Static Buildpack](https://github.com/heroku/heroku-buildpack-static#configuration)
+
+```json
+{
+  "root": "public/",
+  "headers": {
+    "/**": {
+      "Cache-Control": "public, max-age=0, must-revalidate"
+    },
+    "/**.png": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/images/**.png": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/images/**.jpg": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/images/**.webp": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/images/**.jp2": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/static/data/**.json": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "/icons/*.png": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    }
+  },
+  "https_only": true,
+  "error_page": "404.html"
+}
+```
+
+3. Push to Heroku
+
+```bash
+<!-- Push to Heroku -->
+git push heroku master
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

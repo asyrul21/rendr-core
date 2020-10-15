@@ -14,7 +14,7 @@ import AnimateAppear from "src/components/animators/reveal-fade-appear"
 import AnimateAppearFromBottom from "src/components/animators/reveal-fade-appear-from-bottom"
 
 // data
-import data from "static/data/index/data2.json"
+import data from "public/static/data/index/data2.json"
 import Image from "src/containers/Image/Image"
 
 // import style

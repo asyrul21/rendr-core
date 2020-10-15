@@ -7,7 +7,7 @@ import classnames from "classnames"
 import Card from "./card/card"
 
 // import style
-import "./InfoCards.scss"
+import "./infoCards.scss"
 
 export const InfoCards = props => {
   const { data, className } = props

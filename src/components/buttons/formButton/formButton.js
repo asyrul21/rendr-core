@@ -4,7 +4,7 @@ import propTypes from "prop-types"
 import withStyles from "src/hocs/withStyles/withStyles"
 import classnames from "classnames"
 
-import "./FormButton.scss"
+import "./formButton.scss"
 
 export class FormButton extends Component {
   render() {

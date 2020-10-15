@@ -7,7 +7,7 @@ import classnames from "classnames"
 import Button from "src/components/buttons/indexButton/indexButton"
 
 // import style
-import "./PriceCard.scss"
+import "./priceCard.scss"
 
 export const PriceCard = props => {
   const { heading, subHeading, text, price, buttonText, buttonLink, className } = props

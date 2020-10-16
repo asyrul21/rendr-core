@@ -1,9 +1,9 @@
 {
     "hero": {
         "backgroundImage": {
-            "path": "static/images/index/landing-coding.jpg",
-            "path_WEBP": "static/images/index/landing-coding.webp",
-            "path_JPEG2000": "static/images/index/landing-coding.jp2"
+            "path": "/static/images/index/landing-coding.jpg",
+            "path_WEBP": "/static/images/index/landing-coding.webp",
+            "path_JPEG2000": "/static/images/index/landing-coding.jp2"
         },
         "logoImage" : {
             "path": "static/images/index/logo.png",
